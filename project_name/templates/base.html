@@ -1,0 +1,18 @@
+{% templatetag openblock %} load staticfiles {% templatetag closeblock %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Django Template</title>
+  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="{% templatetag openblock %} static 'styles/main.css' {% templatetag closeblock %}">
+  {% templatetag openblock %} include "includes/meta.html" {% templatetag closeblock %}
+</head>
+<body>
+
+{% templatetag openblock %} block content {% templatetag closeblock %}{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+<script src="{% templatetag openblock %} static 'scripts/main.js' {% templatetag closeblock %}" async></script>
+</body>
+</html>

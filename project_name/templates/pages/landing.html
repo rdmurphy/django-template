@@ -1,0 +1,7 @@
+{% templatetag openblock %} extends 'base.html' {% templatetag closeblock %}
+
+{% templatetag openblock %} block content {% templatetag closeblock %}
+<h1>Project setup was a success!</h1>
+<p>Everything should be ready to go. (Don't forget to run <code>python manage.py migrate</code>!)</p>
+<p>This page can be edited at <code>{{ project_name }}/templates/pages/landing.html</code>.</p>
+{% templatetag openblock %} endblock {% templatetag closeblock %}
