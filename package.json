@@ -28,6 +28,9 @@
     "susy": "^2.2.5"
   },
   "scripts": {
-    "serve": "gulp serve"
+    "build": "gulp build",
+    "build/production": "gulp build --production",
+    "serve": "gulp serve",
+    "serve/production": "gulp serve --production"
   }
 }

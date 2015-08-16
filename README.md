@@ -5,6 +5,7 @@ A basic starting point for a Django app. Intentionally simple and opinionated. S
 ## Requirements
 
 - Django 1.8
+- Node.js
 - `virtualenvwrapper`
 - Willingness to change this README to something that makes sense with your project post-generation
 
@@ -33,7 +34,7 @@ pip install django
 Now we're ready to pull in the template. Take note &mdash; if you do not pass in the `<folder-of-your-project>`, it'll create a new one for you.
 
 ```bash
-django-admin startproject --template=https://github.com/rdmurphy/django-template/archive/master.zip --extension=gitignore,html,py <name-of-your-project> <folder-of-your-project>
+django-admin startproject --template=https://github.com/rdmurphy/django-template/archive/master.zip --extension=gitignore,html,py,js <name-of-your-project> <folder-of-your-project>
 ```
 
 Jump into your newly created project folder, get `git` initialized, and make your first commit.
@@ -55,6 +56,24 @@ You should be able to run your first `migrate` now! Give it a try.
 
 ```bash
 python <name-of-your-project>/manage.py migrate
+```
+
+Next, we'll install the Node.js dependencies for building our static assets.
+
+```bash
+npm install
+```
+
+Then we can build our assets.
+
+```bash
+npm run build
+```
+
+The assets can auto-compile while you work, too!
+
+```bash
+npm run serve
 ```
 
 And it should be able to handle `runserver` now, too.
