@@ -5,7 +5,7 @@ from .base import *
 #######################
 
 # https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-DEBUG
-DEBUG = env('DEBUG', False)
+DEBUG = env('DJANGO_DEBUG', False)
 
 ############################
 # SECRET KEY CONFIGURATION #
