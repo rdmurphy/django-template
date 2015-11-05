@@ -1,5 +1,5 @@
 -r base.txt
 
 django-debug-toolbar==1.4
-django-extensions==1.5.7
+django-extensions==1.5.9
 ipython==4.0.0
