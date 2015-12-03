@@ -15,6 +15,7 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views import defaults
 from django.views.generic import TemplateView
 
 
@@ -27,8 +28,8 @@ urlpatterns = [
 # Test pages normally not reachable when DEBUG = True
 if settings.DEBUG:
     urlpatterns += [
-        url(r'^400/$', 'django.views.defaults.bad_request'),
-        url(r'^403/$', 'django.views.defaults.permission_denied'),
-        url(r'^404/$', 'django.views.defaults.page_not_found'),
-        url(r'^500/$', 'django.views.defaults.server_error'),
+        url(r'^400/$', defaults.bad_request),
+        url(r'^403/$', defaults.permission_denied),
+        url(r'^404/$', defaults.page_not_found),
+        url(r'^500/$', defaults.server_error),
     ]
