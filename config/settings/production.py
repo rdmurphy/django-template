@@ -4,14 +4,14 @@ from .base import *
 # DEBUG CONFIGURATION #
 #######################
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-DEBUG
+# https://docs.djangoproject.com/en/1.9/ref/settings/#std:setting-DEBUG
 DEBUG = env('DJANGO_DEBUG', False)
 
 ############################
 # SECRET KEY CONFIGURATION #
 ############################
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#secret-key
+# https://docs.djangoproject.com/en/1.9/ref/settings/#secret-key
 # This key should only be used for development and testing!
 SECRET_KEY = env('SECRET_KEY')
 
@@ -19,7 +19,7 @@ SECRET_KEY = env('SECRET_KEY')
 # DATABASE CONFIGURATION #
 ##########################
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -31,14 +31,14 @@ DATABASES = {
     }
 }
 
-# https://docs.djangoproject.com/en/1.8/topics/db/transactions/#tying-transactions-to-http-requests
+# https://docs.djangoproject.com/en/1.9/topics/db/transactions/#tying-transactions-to-http-requests
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 #######################
 # CACHE CONFIGURATION #
 #######################
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#caches
+# https://docs.djangoproject.com/en/1.9/ref/settings/#caches
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
@@ -49,7 +49,7 @@ CACHES = {
 # TEMPLATE CONFIGURATION #
 ##########################
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES
+# https://docs.djangoproject.com/en/1.9/ref/settings/#std:setting-TEMPLATES
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -76,6 +76,6 @@ TEMPLATES = [
 # HOST CONFIGURATION #
 ######################
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#allowed-hosts
+# https://docs.djangoproject.com/en/1.9/ref/settings/#allowed-hosts
 # https://docs.djangoproject.com/en/1.5/releases/1.5/#allowed-hosts-required-in-production
 ALLOWED_HOSTS = ['*']

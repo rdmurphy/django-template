@@ -4,14 +4,14 @@ from .base import *
 # DEBUG CONFIGURATION #
 #######################
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-DEBUG
+# https://docs.djangoproject.com/en/1.9/ref/settings/#std:setting-DEBUG
 DEBUG = env('DJANGO_DEBUG', True)
 
 ############################
 # SECRET KEY CONFIGURATION #
 ############################
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#secret-key
+# https://docs.djangoproject.com/en/1.9/ref/settings/#secret-key
 # This key should only be used for development and testing!
 SECRET_KEY = env('SECRET_KEY', 'this_is_my_development_key')
 
@@ -19,7 +19,7 @@ SECRET_KEY = env('SECRET_KEY', 'this_is_my_development_key')
 # DATABASE CONFIGURATION #
 ##########################
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -31,7 +31,7 @@ DATABASES = {
 # TEMPLATE CONFIGURATION #
 ##########################
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES
+# https://docs.djangoproject.com/en/1.9/ref/settings/#std:setting-TEMPLATES
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

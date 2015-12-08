@@ -1,9 +1,9 @@
 """
 For more information on this file, see
-https://docs.djangoproject.com/en/1.8/topics/settings/
+https://docs.djangoproject.com/en/1.9/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.8/ref/settings/
+https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 from os import environ, path
@@ -69,14 +69,14 @@ LOCAL_APPS = (
 
 )
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#installed-apps
+# https://docs.djangoproject.com/en/1.9/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 ############################
 # MIDDLEWARE CONFIGURATION #
 ############################
 
-# https://docs.djangoproject.com/en/1.8/topics/http/middleware/
+# https://docs.djangoproject.com/en/1.9/topics/http/middleware/
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -92,24 +92,24 @@ MIDDLEWARE_CLASSES = (
 # URL CONFIGURATION #
 #####################
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-ROOT_URLCONF
+# https://docs.djangoproject.com/en/1.9/ref/settings/#std:setting-ROOT_URLCONF
 ROOT_URLCONF = 'config.urls'
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#wsgi-application
+# https://docs.djangoproject.com/en/1.9/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'config.wsgi.application'
 
 #############################
 # STATIC FILE CONFIGURATION #
 #############################
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#static-url
+# https://docs.djangoproject.com/en/1.9/ref/settings/#static-url
 STATIC_URL = '/static/'
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#static-root
+# https://docs.djangoproject.com/en/1.9/ref/settings/#static-root
 STATIC_ROOT = path.join(APPS_DIR, 'assets')
 
-# https://docs.djangoproject.com/en/1.8/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
+# https://docs.djangoproject.com/en/1.9/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
     path.join(APPS_DIR, 'static'),
 )
@@ -117,22 +117,22 @@ STATICFILES_DIRS = (
 #########################
 # GENERAL CONFIGURATION #
 #########################
-# https://docs.djangoproject.com/en/1.8/topics/i18n/
+# https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#language-code
+# https://docs.djangoproject.com/en/1.9/ref/settings/#language-code
 LANGUAGE_CODE = 'en-us'
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#time-zone
+# https://docs.djangoproject.com/en/1.9/ref/settings/#time-zone
 TIME_ZONE = 'UTC'
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#use-i18n
+# https://docs.djangoproject.com/en/1.9/ref/settings/#use-i18n
 USE_I18N = True
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-USE_L10N
+# https://docs.djangoproject.com/en/1.9/ref/settings/#std:setting-USE_L10N
 USE_L10N = True
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-USE_TZ
+# https://docs.djangoproject.com/en/1.9/ref/settings/#std:setting-USE_TZ
 USE_TZ = True
 
-# https://docs.djangoproject.com/en/1.8/ref/settings/#site-id
+# https://docs.djangoproject.com/en/1.9/ref/settings/#site-id
 SITE_ID = 1
