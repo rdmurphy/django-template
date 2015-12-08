@@ -4,7 +4,7 @@ A basic starting point for a Django app. Intentionally simple and opinionated. S
 
 ## Requirements
 
-- Django 1.8
+- Django 1.9
 - Node.js
 - `virtualenvwrapper`
 - Willingness to change this README to something that makes sense with your project post-generation
