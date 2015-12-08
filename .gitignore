@@ -62,6 +62,7 @@ target/
 
 # Project assets
 {{ project_name }}/assets
+{{ project_name }}/static
 
 # OSX
 .DS_Store
@@ -76,6 +77,9 @@ node_modules
 
 # Bower
 bower_components
+
+# PostgreSQL dumps
+*.dump
 
 # SQLite
 *.db
