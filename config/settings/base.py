@@ -1,10 +1,12 @@
+# -*- coding: utf-8 -*-
 """
 For more information on this file, see
-https://docs.djangoproject.com/en/1.9/topics/settings/
+https://docs.djangoproject.com/en/{{ docs_version }}/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.9/ref/settings/
+https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/
 """
+from __future__ import absolute_import, unicode_literals
 
 from os import environ, path
 
@@ -57,6 +59,7 @@ DJANGO_APPS = (
     'django.contrib.humanize',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'django.contrib.sitemaps',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 )
@@ -69,14 +72,14 @@ LOCAL_APPS = (
 
 )
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#installed-apps
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 ############################
 # MIDDLEWARE CONFIGURATION #
 ############################
 
-# https://docs.djangoproject.com/en/1.9/topics/http/middleware/
+# https://docs.djangoproject.com/en/{{ docs_version }}/topics/http/middleware/
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -88,51 +91,76 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+###########################
+# MIGRATION CONFIGURATION #
+###########################
+
+MIGRATION_MODULES = {
+    'sites': '{{ project_name }}.contrib.sites.migrations',
+}
+
 #####################
 # URL CONFIGURATION #
 #####################
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#std:setting-ROOT_URLCONF
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#std:setting-ROOT_URLCONF
 ROOT_URLCONF = 'config.urls'
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#wsgi-application
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'config.wsgi.application'
 
 #############################
 # STATIC FILE CONFIGURATION #
 #############################
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
+# https://docs.djangoproject.com/en/{{ docs_version }}/howto/static-files/
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#static-url
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#static-url
 STATIC_URL = '/static/'
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#static-root
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#static-root
 STATIC_ROOT = path.join(APPS_DIR, 'assets')
 
-# https://docs.djangoproject.com/en/1.9/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
     path.join(APPS_DIR, 'static'),
 )
 
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#std:setting-STATICFILES_FINDERS
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+)
+
+############################
+# MEDIA FILE CONFIGURATION #
+############################
+# https://docs.djangoproject.com/en/{{ docs_version }}/topics/files/
+
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#std:setting-MEDIA_ROOT
+MEDIA_ROOT = path.join(APPS_DIR, 'media')
+
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#std:setting-MEDIA_URL
+MEDIA_URL = '/media/'
+
 #########################
 # GENERAL CONFIGURATION #
 #########################
-# https://docs.djangoproject.com/en/1.9/topics/i18n/
+# https://docs.djangoproject.com/en/{{ docs_version }}/topics/i18n/
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#language-code
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#language-code
 LANGUAGE_CODE = 'en-us'
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#time-zone
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#time-zone
 TIME_ZONE = 'UTC'
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#use-i18n
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#use-i18n
 USE_I18N = True
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#std:setting-USE_L10N
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#std:setting-USE_L10N
 USE_L10N = True
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#std:setting-USE_TZ
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#std:setting-USE_TZ
 USE_TZ = True
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#site-id
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#site-id
 SITE_ID = 1

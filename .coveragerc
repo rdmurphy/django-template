@@ -1,0 +1,3 @@
+[run]
+include = {{ project_name }}/*
+omit = *migrations*, *tests*

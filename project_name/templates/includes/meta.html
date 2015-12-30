@@ -1,10 +1,12 @@
-<meta name="twitter:card" content="">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="">
 <meta name="twitter:creator" content="">
-<meta property="og:url" content="">
-<meta property="og:title" content="">
-<meta property="og:type" content="">
-<meta property="og:description" content="">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:title" content="{% if title %}{{ title }}{% else %}Django Template{% endif %}">
+<meta property="og:type" content="article">
+<meta property="article:publisher" content="">
+<meta property="article:published_time" content="">
+<meta property="og:description" content="{% if description %}{% else %}Check out how cool this site is!{% endif %}">
 <meta property="og:site_name" content="">
 <meta property="og:image" content="">
 <meta property="fb:app_id" content="">

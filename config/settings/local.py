@@ -1,29 +1,47 @@
+# -*- coding: utf-8 -*-
+
 from .base import *
+
+import dj_database_url
 
 #######################
 # DEBUG CONFIGURATION #
 #######################
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#std:setting-DEBUG
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#std:setting-DEBUG
 DEBUG = env('DJANGO_DEBUG', True)
 
 ############################
 # SECRET KEY CONFIGURATION #
 ############################
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#secret-key
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#secret-key
 # This key should only be used for development and testing!
-SECRET_KEY = env('SECRET_KEY', 'this_is_my_development_key')
+SECRET_KEY = env('DJANGO_SECRET_KEY', 'this_is_my_development_key')
 
 ##########################
 # DATABASE CONFIGURATION #
 ##########################
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#databases
+# https://github.com/kennethreitz/dj-database-url#usage
 DATABASES = {
+    'default': dj_database_url.config(
+        default='postgres://localhost/{{ project_name }}')
+}
+
+# https://docs.djangoproject.com/en/{{ docs_version }}/topics/db/transactions/#tying-transactions-to-http-requests
+DATABASES['default']['ATOMIC_REQUESTS'] = True
+
+#######################
+# CACHE CONFIGURATION #
+#######################
+
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#caches
+CACHES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': path.join(ROOT_DIR, '{{ project_name }}.db'),
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': '',
     }
 }
 
@@ -31,7 +49,7 @@ DATABASES = {
 # TEMPLATE CONFIGURATION #
 ##########################
 
-# https://docs.djangoproject.com/en/1.9/ref/settings/#std:setting-TEMPLATES
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#std:setting-TEMPLATES
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -40,9 +58,12 @@ TEMPLATES = [
         'OPTIONS': {
             'debug': DEBUG,
             'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
