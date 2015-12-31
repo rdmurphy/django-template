@@ -34,7 +34,7 @@ pip install django
 Now we're ready to pull in the template. Take note &mdash; if you do not pass in the `<folder-of-your-project>`, it'll create a new one for you.
 
 ```bash
-django-admin startproject --template=https://github.com/rdmurphy/django-template/archive/master.zip --extension=gitignore,html,py,js <name-of-your-project> <folder-of-your-project>
+django-admin startproject --template=https://github.com/rdmurphy/django-template/archive/master.zip --extension=coveragerc,gitignore,html,py,js <name-of-your-project> <folder-of-your-project>
 ```
 
 Jump into your newly created project folder, get `git` initialized, and make your first commit.
@@ -67,7 +67,7 @@ npm install
 Then we can build our assets.
 
 ```bash
-npm run build
+npm run build/production
 ```
 
 The assets can auto-compile while you work, too!
