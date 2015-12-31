@@ -8,6 +8,8 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import yargs from 'yargs';
 
+const projectFolder = '{{ project_name }}';
+
 const $ = gulpLoadPlugins();
 const args = yargs.argv;
 const bs = browserSync.create();
@@ -44,8 +46,8 @@ gulp.task('scripts', (cb) => {
 });
 
 gulp.task('styles', () => {
-  return gulp.src('./{{ project_name }}/static_src/scss/*.scss')
-    .pipe($.newer('./{{ project_name }}/static/styles'))
+  return gulp.src(`./${projectFolder}/static_src/scss/*.scss`)
+    .pipe($.newer(`./${projectFolder}/static/styles`))
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: ['node_modules'],
@@ -60,31 +62,31 @@ gulp.task('styles', () => {
       }
     })))
     .pipe($.sourcemaps.write(args.production ? '.' : undefined))
-    .pipe(gulp.dest('./{{ project_name }}/static/styles/'))
+    .pipe(gulp.dest(`./${projectFolder}/static/styles/`))
     .pipe(bs.stream({match: '**/*.css'}))
     .pipe($.size({title: 'styles'}));
 });
 
 gulp.task('images', () => {
-  return gulp.src('./{{ project_name }}/static_src/images/**/*')
+  return gulp.src(`./${projectFolder}/static_src/images/**/*`)
     .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true
     })))
-    .pipe(gulp.dest('./{{ project_name }}/static/images/'))
+    .pipe(gulp.dest(`./${projectFolder}/static/images/`))
     .pipe($.size({title: 'images'}));
 });
 
 gulp.task('extras', () => {
-  return gulp.src(['./{{ project_name }}/static_src/favicon.ico', './{{ project_name }}/static_src/robots.txt'])
-    .pipe(gulp.dest('./{{ project_name }}/static'))
+  return gulp.src([`./${projectFolder}/static_src/favicon.ico`, `./${projectFolder}/static_src/robots.txt`])
+    .pipe(gulp.dest(`./${projectFolder}/static`))
     .pipe($.size({title: 'extras'}));
 });
 
 gulp.task('serve', ['images', 'extras', 'styles'], () => {
   bs.init({
     logConnections: true,
-    logPrefix: '{{ project_name }}'.toUpperCase(),
+    logPrefix: projectFolder.toUpperCase(),
     middleware: [
       webpackDevMiddleware(webpackBundle, {
         publicPath: webpackConfig.output.publicPath,
@@ -97,8 +99,8 @@ gulp.task('serve', ['images', 'extras', 'styles'], () => {
     proxy: 'localhost:8000'
   });
 
-  gulp.watch(['./{{ project_name }}/static_src/scss/**/*.scss'], ['styles']);
-  gulp.watch(['./{{ project_name }}/templates/**/*.html']).on('change', bs.reload);
+  gulp.watch([`./${projectFolder}/static_src/scss/**/*.scss`], ['styles']);
+  gulp.watch([`./${projectFolder}/templates/**/*.html`]).on('change', bs.reload);
 });
 
 gulp.task('default', ['images', 'extras', 'scripts', 'styles']);
