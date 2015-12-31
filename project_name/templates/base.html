@@ -3,15 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Django Template</title>
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create', 'UA-XXXXX-Y', 'auto');ga('send', 'pageview');</script>
   <link rel="stylesheet" href="{% templatetag openblock %} static 'styles/main.css' {% templatetag closeblock %}">
   {% templatetag openblock %} include "includes/meta.html" {% templatetag closeblock %}
+  <script async src='//www.google-analytics.com/analytics.js'></script>
 </head>
 <body>
 
 {% templatetag openblock %} block content {% templatetag closeblock %}{% templatetag openblock %} endblock {% templatetag closeblock %}
 
-<script src="{% templatetag openblock %} static 'scripts/main.js' {% templatetag closeblock %}" async></script>
+<script src="{% templatetag openblock %} static 'scripts/main.js' {% templatetag closeblock %}"></script>
 </body>
 </html>
