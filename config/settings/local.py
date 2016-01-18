@@ -74,9 +74,10 @@ TEMPLATES = [
 # DJANGO DEBUG TOOLBAR CONFIGURATION #
 ######################################
 
-INSTALLED_APPS += (
-    'debug_toolbar',
-)
+if not env('DISABLE_DEBUG_TOOLBAR', False):
+    INSTALLED_APPS += (
+        'debug_toolbar',
+    )
 
 ###################################
 # DJANGO EXTENSIONS CONFIGURATION #

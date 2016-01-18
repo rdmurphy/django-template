@@ -13,7 +13,7 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(
         template_name='landing.html'), name='landing'),
 
-    url(r'^admin/', include(admin.site.urls)),
+    url(settings.ADMIN_URL, include(admin.site.urls)),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

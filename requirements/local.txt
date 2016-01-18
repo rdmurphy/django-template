@@ -3,4 +3,4 @@
 coverage==4.0.3
 django-debug-toolbar==1.4
 django-extensions==1.6.1
-ipython==4.0.1
+ipython==4.0.2

@@ -164,3 +164,15 @@ USE_TZ = True
 
 # https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#site-id
 SITE_ID = 1
+
+###############################
+# AUTHENICATION CONFIGURATION #
+###############################
+
+ADMIN_URL = r'^admin/'
+
+##########################
+# AUTOSLUG CONFIGURATION #
+##########################
+
+AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
