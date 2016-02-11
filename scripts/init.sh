@@ -1,16 +1,8 @@
-# /bin/sh
-
-echo "Wiping out all migrations..."
-find {{ project_name }} -type f -path "*/migrations/00*.py" ! -path "*/contrib/*" -delete -print
-
-echo "Making new migrations..."
-python manage.py makemigrations
-
-echo "Resetting database..."
+echo "Setting up database..."
 dropdb {{ project_name }} --if-exists
 createdb {{ project_name }}
 
-echo "Migrating..."
+echo "Running initial migrations..."
 python manage.py migrate
 
 echo "Adding development superuser..."
