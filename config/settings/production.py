@@ -39,9 +39,11 @@ X_FRAME_OPTIONS = 'DENY'
 # DATABASE CONFIGURATION #
 ##########################
 
+DATABASES = {}
+
 # https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#databases
 # https://github.com/kennethreitz/dj-database-url#usage
-DATABASES = dj_database_url.config()
+DATABASES['default'] = dj_database_url.config()
 
 # https://docs.djangoproject.com/en/{{ docs_version }}/topics/db/transactions/#tying-transactions-to-http-requests
 DATABASES['default']['ATOMIC_REQUESTS'] = True
