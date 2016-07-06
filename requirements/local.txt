@@ -1,6 +1,6 @@
 -r base.txt
 
-coverage==4.0.3
+coverage==4.1
 django-debug-toolbar==1.4
 django-extensions==1.6.7
-ipython==4.2.0
+ipython==4.2.1
