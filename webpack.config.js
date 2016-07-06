@@ -1,4 +1,4 @@
-var path = require('path');
+var path = require('path')
 
 module.exports = {
   context: path.join(__dirname, '/{{ project_name }}/static_src/scripts'),
@@ -29,4 +29,4 @@ module.exports = {
   plugins: [],
   debug: true,
   devtool: 'cheap-module-eval-source-map'
-};
+}
