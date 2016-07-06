@@ -70,16 +70,12 @@ Then we can build our assets.
 npm run build/production
 ```
 
-The assets can auto-compile while you work, too!
+Running the development server is one command.
 
 ```bash
 npm run serve
 ```
 
-And it should be able to handle `runserver` now, too.
+This handles both the `python manage.py runserver` and the `gulp serve`, and can cleanly exit them both. Your site will be available at `http://localhost:3000`!
 
-```bash
-python <name-of-your-project>/manage.py runserver
-```
-
-If everything checks out you're good to go. Don't forget to replace this README!
+Don't forget to replace this README!
