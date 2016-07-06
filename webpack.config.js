@@ -1,4 +1,5 @@
-var path = require('path')
+const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   context: path.join(__dirname, '/{{ project_name }}/static_src/scripts'),
@@ -26,7 +27,12 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.json']
   },
-  plugins: [],
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'commons',
+      minChunks: 2
+    })
+  ],
   debug: true,
   devtool: 'cheap-module-eval-source-map'
 }
