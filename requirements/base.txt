@@ -1,8 +1,8 @@
-Django==1.9.7
+Django==1.9.8
 
 dj-database-url==0.4.1
 django-autoslug==1.9.3
 django-braces==1.9.0
 psycopg2==2.6.2
-pytz==2016.6
+pytz==2016.6.1
 unicode-slugify==0.1.3
