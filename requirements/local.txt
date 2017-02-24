@@ -2,5 +2,5 @@
 
 coverage==4.3.4
 django-debug-toolbar==1.6
-django-extensions==1.7.6
-ipython==5.2.2
+django-extensions==1.7.7
+ipython==5.3.0
