@@ -1,4 +1,4 @@
-Django==1.11.7
+Django==1.11.8
 
 dj-database-url==0.4.2
 django-autoslug==1.9.3
