@@ -1,7 +1,7 @@
 Django==2.1.5
 
 dj-database-url==0.5.0
-django-autoslug==1.9.3
+django-autoslug==1.9.4
 django-braces==1.13.0
 psycopg2==2.7.7
 pytz==2018.9
