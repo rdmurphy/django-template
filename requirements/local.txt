@@ -1,6 +1,6 @@
 -r base.txt
 
 coverage==4.5.3
-django-debug-toolbar==1.11
+django-debug-toolbar==2.0
 django-extensions==2.1.9
 ipython==7.5.0
